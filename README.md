@@ -1,75 +1,72 @@
-# React + TypeScript + Vite
+# Karamveer Singh — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive personal portfolio for Karamveer Singh, a software engineer and creative technologist. It presents selected projects, skills, experience, achievements, an about section, and contact links in a dark interface with an optional light theme.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Responsive navigation and page sections
+- Dark and light themes; the selected theme is saved in local storage
+- Animated hero scene with a floating 3D-style code terminal and circuit details
+- Draggable project carousel with previous/next controls
+- Skills, work experience, achievements, competitions, workshops, and contact information
+- Motion effects that respect the user's reduced-motion preference
 
-## React Compiler
+## Tech stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19 and TypeScript
+- Vite
+- Framer Motion
+- Lucide icons
+- CSS animations and 3D transforms
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install a recent Node.js LTS release and npm, then run:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```sh
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Vite prints a local development URL in the terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available commands
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the development server with hot reload |
+| `npm run build` | Type-check the project and create a production build |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint |
 
+To review the production build locally:
+
+```sh
+npm run build
+npm run preview
 ```
+
+The production site is written to `dist/`. Deploy that directory using your static hosting provider.
+
+## Project structure
+
+```text
+src/
+  App.tsx          Page content, project data, theme control, and interactions
+  index.css        Theme tokens, layout, responsive styles, and animations
+  main.tsx         React entry point and motion feature loading
+  assets/          Portfolio images
+public/            Static files served from the site root
+index.html         Page title and metadata
+```
+
+## Updating portfolio content
+
+- Edit the `projects`, `skills`, `profileSections`, and `socials` data near the top of `src/App.tsx`.
+- Update the hero, about, or contact content in the corresponding sections in `src/App.tsx`.
+- Adjust theme colors and layout in `src/index.css`. The theme tokens are defined near the top of that file.
+- Replace or add images in `src/assets/` and update their imports in `src/App.tsx`.
+
+## Metadata and static files
+
+The page title, description, viewport, and favicon are configured in `index.html`. Files in `public/` are copied to the root of the production site.
