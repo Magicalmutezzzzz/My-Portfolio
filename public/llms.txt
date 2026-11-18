@@ -1,0 +1,17 @@
+# Karamveer Singh — Portfolio
+
+> Portfolio of Karamveer Singh, a software engineer and creative technologist working on full-stack software, AI, and digital experiences.
+
+## Pages
+
+- [Home](/)
+- [Projects](/#work)
+- [Technical skills](/#skills)
+- [Experience, achievements, competitions, and events](/#journey)
+- [About](/#about)
+- [Contact](/#contact)
+
+## Profiles
+
+- [GitHub](https://github.com/magicalmutezzzzz)
+- [LinkedIn](https://www.linkedin.com/in/karamveer340)
